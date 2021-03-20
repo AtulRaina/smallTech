@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="libraryTable">
+    <library name="testng-5.5">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/workspace/untitled1/testng-5.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="jar://$USER_HOME$/workspace/untitled1/testng-5.5.jar!/" recursive="false" />
+    </library>
+  </component>
+</project>

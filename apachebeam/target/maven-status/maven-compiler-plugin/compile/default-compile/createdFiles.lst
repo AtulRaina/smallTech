@@ -1,0 +1,6 @@
+BeamPubsub.class
+com\smalltech\avro\pos.class
+com\smalltech\avro\pos$Builder.class
+com\smalltech\avro\pos$1.class
+BeamPubsub$ExtractCountry.class
+BeamPubsub$PubSubToGcsOptions.class
