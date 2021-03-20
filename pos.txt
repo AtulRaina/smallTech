@@ -1,0 +1,27 @@
+{
+   "type":"record",
+   "name":"pos",
+   "namespace":"com.smalltech.avro",
+   "fields":[
+      {
+         "name":"timeofsale",
+         "type":"string"
+      },
+      {
+         "name":"merchant",
+         "type":"string"
+      },
+      {
+         "name":"productid",
+         "type":"string"
+      },
+      {
+         "name":"sellingPrice",
+         "type":"string"
+      },
+      {
+         "name":"quantity",
+         "type":"string"
+      }
+   ]
+}

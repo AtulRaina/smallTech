@@ -1,0 +1,7 @@
+{
+ "timeofsale":"timeofsale",
+ "merchant":"merchant",   
+ "productid":"productid",  
+ "sellingPrice":"selling",
+ "quantity":"qunati"
+}
