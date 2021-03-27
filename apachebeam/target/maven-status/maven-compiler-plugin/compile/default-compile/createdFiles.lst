@@ -1,6 +1,9 @@
+com\smalltech\avro\pos$1.class
+BeamPubsub$ComputeWordLengthFn.class
 BeamPubsub.class
 com\smalltech\avro\pos.class
 com\smalltech\avro\pos$Builder.class
-com\smalltech\avro\pos$1.class
 BeamPubsub$ExtractCountry.class
+BeamPubsub$pubsub_to_class.class
+BeamFirestore.class
 BeamPubsub$PubSubToGcsOptions.class
