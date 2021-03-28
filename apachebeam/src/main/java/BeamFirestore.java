@@ -55,7 +55,7 @@ public class BeamFirestore<In> extends DoFn<pos, Void>  {
 
         mutations.add(mutation);
         // Batch size set to 200, could go up to 500
-        if (mutations.size() >= 5) {
+        if (mutations.size() >= 1) {
             flushBatch(context.getPipelineOptions());
         }
     }
@@ -75,7 +75,7 @@ public class BeamFirestore<In> extends DoFn<pos, Void>  {
         // Create batch to commit documents
         WriteBatch batch = db.batch();
         for (pos doc : mutations) {
-            pos ps= JsonConvert.DeserializeObject<pos>(json)
+
             Map<String, Object> map = new HashMap<>();
 // Use MyObject.class.getFields() instead of getDeclaredFields()
 // If you are interested in public fields only
@@ -86,7 +86,7 @@ public class BeamFirestore<In> extends DoFn<pos, Void>  {
                 }
                if( field_to_pick.contains(field.getName()))
                 {
-                    map.put(field.getName(), field.get(doc));
+                    map.put(field.getName(), field.get(doc).toString());
                 }
 
 

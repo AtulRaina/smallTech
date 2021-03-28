@@ -42,7 +42,7 @@ public class PubsubService {
 
 		// Instantiate an avro-tools-generated class defined in `us-states.avsc`.
 		//pos state = pos.newBuilder().setName("Alaska").setPostAbbr("AK").build();
-		for(int i=0;i<5;i++)
+		for(int i=0;i<1;i++)
 		{
 			PubsubDataGenerator inject = new PubsubDataGenerator();
 			pos state = pos.newBuilder().setTimeofsale(inject.timeofsale).setMerchant(inject.merchant).setProductid(inject.productid).setSellingPrice(inject.sellingPrice).setQuantity(inject.quantity).build();
