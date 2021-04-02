@@ -14,3 +14,11 @@ Publisher: mvn sprint-boot:run
 
 
 Invoke-WebRequest http://localhost:8080//publish
+
+
+gcloud functions deploy smalltech1 --entry-point functions.HelloPubSub --runtime=java11 --trigger-topic pos-v1 --source=target/deployment/ --region=australia-southeast1
+
+gcloud functions deploy smalltech --entry-point functions.HelloPubSub --runtime=java11 --trigger-topic pos-v1 --source=target/deployment/
+
+
+gcloud auth activate-service-account dell-laptop@lyrical-amulet-308012.iam.gserviceaccount.com  --key-file=c:/lock/lyrical-amulet-308012-c9b6b13821f0.json --project=lyrical-amulet-308012

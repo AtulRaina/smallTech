@@ -21,7 +21,7 @@ public class PubsubService {
 	public String publishMessage() throws Exception {
 		String projectId = "lyrical-amulet-308012";
 		// Use a topic created with an Avro schema.
-		String topicId = "pos";
+		String topicId = "pos-v1";
 
 		return publishAvroRecordsExample(projectId, topicId);
 		
@@ -45,7 +45,7 @@ public class PubsubService {
 		for(int i=0;i<1;i++)
 		{
 			PubsubDataGenerator inject = new PubsubDataGenerator();
-			pos state = pos.newBuilder().setTimeofsale(inject.timeofsale).setMerchant(inject.merchant).setProductid(inject.productid).setSellingPrice(inject.sellingPrice).setQuantity(inject.quantity).build();
+			pos state = pos.newBuilder().setTimeofsale(inject.timeofsale).setMerchant(inject.merchant).setProductid(inject.productid).setSellingPrice(inject.sellingPrice).setQuantity(inject.quantity).setOrderid(inject.orderid).build();
 			Publisher publisher = null;
 
 			block:

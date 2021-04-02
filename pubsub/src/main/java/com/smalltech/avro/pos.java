@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class pos extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 5782335492079197479L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"pos\",\"namespace\":\"com.smalltech.avro\",\"fields\":[{\"name\":\"timeofsale\",\"type\":\"string\"},{\"name\":\"merchant\",\"type\":\"string\"},{\"name\":\"productid\",\"type\":\"string\"},{\"name\":\"sellingPrice\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"string\"}]}");
+  private static final long serialVersionUID = -4307226106141343177L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"pos\",\"namespace\":\"com.smalltech.avro\",\"fields\":[{\"name\":\"orderid\",\"type\":\"string\"},{\"name\":\"timeofsale\",\"type\":\"string\"},{\"name\":\"merchant\",\"type\":\"string\"},{\"name\":\"productid\",\"type\":\"string\"},{\"name\":\"sellingPrice\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -71,6 +71,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
     return DECODER.decode(b);
   }
 
+   private java.lang.CharSequence orderid;
    private java.lang.CharSequence timeofsale;
    private java.lang.CharSequence merchant;
    private java.lang.CharSequence productid;
@@ -86,13 +87,15 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
 
   /**
    * All-args constructor.
+   * @param orderid The new value for orderid
    * @param timeofsale The new value for timeofsale
    * @param merchant The new value for merchant
    * @param productid The new value for productid
    * @param sellingPrice The new value for sellingPrice
    * @param quantity The new value for quantity
    */
-  public pos(java.lang.CharSequence timeofsale, java.lang.CharSequence merchant, java.lang.CharSequence productid, java.lang.CharSequence sellingPrice, java.lang.CharSequence quantity) {
+  public pos(java.lang.CharSequence orderid, java.lang.CharSequence timeofsale, java.lang.CharSequence merchant, java.lang.CharSequence productid, java.lang.CharSequence sellingPrice, java.lang.CharSequence quantity) {
+    this.orderid = orderid;
     this.timeofsale = timeofsale;
     this.merchant = merchant;
     this.productid = productid;
@@ -105,11 +108,12 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return timeofsale;
-    case 1: return merchant;
-    case 2: return productid;
-    case 3: return sellingPrice;
-    case 4: return quantity;
+    case 0: return orderid;
+    case 1: return timeofsale;
+    case 2: return merchant;
+    case 3: return productid;
+    case 4: return sellingPrice;
+    case 5: return quantity;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -118,13 +122,31 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: timeofsale = (java.lang.CharSequence)value$; break;
-    case 1: merchant = (java.lang.CharSequence)value$; break;
-    case 2: productid = (java.lang.CharSequence)value$; break;
-    case 3: sellingPrice = (java.lang.CharSequence)value$; break;
-    case 4: quantity = (java.lang.CharSequence)value$; break;
+    case 0: orderid = (java.lang.CharSequence)value$; break;
+    case 1: timeofsale = (java.lang.CharSequence)value$; break;
+    case 2: merchant = (java.lang.CharSequence)value$; break;
+    case 3: productid = (java.lang.CharSequence)value$; break;
+    case 4: sellingPrice = (java.lang.CharSequence)value$; break;
+    case 5: quantity = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
+  }
+
+  /**
+   * Gets the value of the 'orderid' field.
+   * @return The value of the 'orderid' field.
+   */
+  public java.lang.CharSequence getOrderid() {
+    return orderid;
+  }
+
+
+  /**
+   * Sets the value of the 'orderid' field.
+   * @param value the value to set.
+   */
+  public void setOrderid(java.lang.CharSequence value) {
+    this.orderid = value;
   }
 
   /**
@@ -253,6 +275,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<pos>
     implements org.apache.avro.data.RecordBuilder<pos> {
 
+    private java.lang.CharSequence orderid;
     private java.lang.CharSequence timeofsale;
     private java.lang.CharSequence merchant;
     private java.lang.CharSequence productid;
@@ -270,25 +293,29 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
      */
     private Builder(com.smalltech.avro.pos.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.timeofsale)) {
-        this.timeofsale = data().deepCopy(fields()[0].schema(), other.timeofsale);
+      if (isValidValue(fields()[0], other.orderid)) {
+        this.orderid = data().deepCopy(fields()[0].schema(), other.orderid);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
-      if (isValidValue(fields()[1], other.merchant)) {
-        this.merchant = data().deepCopy(fields()[1].schema(), other.merchant);
+      if (isValidValue(fields()[1], other.timeofsale)) {
+        this.timeofsale = data().deepCopy(fields()[1].schema(), other.timeofsale);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.productid)) {
-        this.productid = data().deepCopy(fields()[2].schema(), other.productid);
+      if (isValidValue(fields()[2], other.merchant)) {
+        this.merchant = data().deepCopy(fields()[2].schema(), other.merchant);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.sellingPrice)) {
-        this.sellingPrice = data().deepCopy(fields()[3].schema(), other.sellingPrice);
+      if (isValidValue(fields()[3], other.productid)) {
+        this.productid = data().deepCopy(fields()[3].schema(), other.productid);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
-      if (isValidValue(fields()[4], other.quantity)) {
-        this.quantity = data().deepCopy(fields()[4].schema(), other.quantity);
+      if (isValidValue(fields()[4], other.sellingPrice)) {
+        this.sellingPrice = data().deepCopy(fields()[4].schema(), other.sellingPrice);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
+      if (isValidValue(fields()[5], other.quantity)) {
+        this.quantity = data().deepCopy(fields()[5].schema(), other.quantity);
+        fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
     }
 
@@ -298,26 +325,70 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
      */
     private Builder(com.smalltech.avro.pos other) {
       super(SCHEMA$);
-      if (isValidValue(fields()[0], other.timeofsale)) {
-        this.timeofsale = data().deepCopy(fields()[0].schema(), other.timeofsale);
+      if (isValidValue(fields()[0], other.orderid)) {
+        this.orderid = data().deepCopy(fields()[0].schema(), other.orderid);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.merchant)) {
-        this.merchant = data().deepCopy(fields()[1].schema(), other.merchant);
+      if (isValidValue(fields()[1], other.timeofsale)) {
+        this.timeofsale = data().deepCopy(fields()[1].schema(), other.timeofsale);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.productid)) {
-        this.productid = data().deepCopy(fields()[2].schema(), other.productid);
+      if (isValidValue(fields()[2], other.merchant)) {
+        this.merchant = data().deepCopy(fields()[2].schema(), other.merchant);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.sellingPrice)) {
-        this.sellingPrice = data().deepCopy(fields()[3].schema(), other.sellingPrice);
+      if (isValidValue(fields()[3], other.productid)) {
+        this.productid = data().deepCopy(fields()[3].schema(), other.productid);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.quantity)) {
-        this.quantity = data().deepCopy(fields()[4].schema(), other.quantity);
+      if (isValidValue(fields()[4], other.sellingPrice)) {
+        this.sellingPrice = data().deepCopy(fields()[4].schema(), other.sellingPrice);
         fieldSetFlags()[4] = true;
       }
+      if (isValidValue(fields()[5], other.quantity)) {
+        this.quantity = data().deepCopy(fields()[5].schema(), other.quantity);
+        fieldSetFlags()[5] = true;
+      }
+    }
+
+    /**
+      * Gets the value of the 'orderid' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getOrderid() {
+      return orderid;
+    }
+
+
+    /**
+      * Sets the value of the 'orderid' field.
+      * @param value The value of 'orderid'.
+      * @return This builder.
+      */
+    public com.smalltech.avro.pos.Builder setOrderid(java.lang.CharSequence value) {
+      validate(fields()[0], value);
+      this.orderid = value;
+      fieldSetFlags()[0] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'orderid' field has been set.
+      * @return True if the 'orderid' field has been set, false otherwise.
+      */
+    public boolean hasOrderid() {
+      return fieldSetFlags()[0];
+    }
+
+
+    /**
+      * Clears the value of the 'orderid' field.
+      * @return This builder.
+      */
+    public com.smalltech.avro.pos.Builder clearOrderid() {
+      orderid = null;
+      fieldSetFlags()[0] = false;
+      return this;
     }
 
     /**
@@ -335,9 +406,9 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return This builder.
       */
     public com.smalltech.avro.pos.Builder setTimeofsale(java.lang.CharSequence value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.timeofsale = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this;
     }
 
@@ -346,7 +417,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return True if the 'timeofsale' field has been set, false otherwise.
       */
     public boolean hasTimeofsale() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
 
 
@@ -356,7 +427,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       */
     public com.smalltech.avro.pos.Builder clearTimeofsale() {
       timeofsale = null;
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
 
@@ -375,9 +446,9 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return This builder.
       */
     public com.smalltech.avro.pos.Builder setMerchant(java.lang.CharSequence value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.merchant = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -386,7 +457,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return True if the 'merchant' field has been set, false otherwise.
       */
     public boolean hasMerchant() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
 
 
@@ -396,7 +467,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       */
     public com.smalltech.avro.pos.Builder clearMerchant() {
       merchant = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -415,9 +486,9 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return This builder.
       */
     public com.smalltech.avro.pos.Builder setProductid(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.productid = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -426,7 +497,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return True if the 'productid' field has been set, false otherwise.
       */
     public boolean hasProductid() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -436,7 +507,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       */
     public com.smalltech.avro.pos.Builder clearProductid() {
       productid = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -455,9 +526,9 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return This builder.
       */
     public com.smalltech.avro.pos.Builder setSellingPrice(java.lang.CharSequence value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.sellingPrice = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -466,7 +537,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return True if the 'sellingPrice' field has been set, false otherwise.
       */
     public boolean hasSellingPrice() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -476,7 +547,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       */
     public com.smalltech.avro.pos.Builder clearSellingPrice() {
       sellingPrice = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -495,9 +566,9 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return This builder.
       */
     public com.smalltech.avro.pos.Builder setQuantity(java.lang.CharSequence value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.quantity = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -506,7 +577,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       * @return True if the 'quantity' field has been set, false otherwise.
       */
     public boolean hasQuantity() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -516,7 +587,7 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       */
     public com.smalltech.avro.pos.Builder clearQuantity() {
       quantity = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -525,11 +596,12 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
     public pos build() {
       try {
         pos record = new pos();
-        record.timeofsale = fieldSetFlags()[0] ? this.timeofsale : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.merchant = fieldSetFlags()[1] ? this.merchant : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.productid = fieldSetFlags()[2] ? this.productid : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.sellingPrice = fieldSetFlags()[3] ? this.sellingPrice : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.quantity = fieldSetFlags()[4] ? this.quantity : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.orderid = fieldSetFlags()[0] ? this.orderid : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.timeofsale = fieldSetFlags()[1] ? this.timeofsale : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.merchant = fieldSetFlags()[2] ? this.merchant : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.productid = fieldSetFlags()[3] ? this.productid : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.sellingPrice = fieldSetFlags()[4] ? this.sellingPrice : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.quantity = fieldSetFlags()[5] ? this.quantity : (java.lang.CharSequence) defaultValue(fields()[5]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -562,6 +634,8 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
   @Override public void customEncode(org.apache.avro.io.Encoder out)
     throws java.io.IOException
   {
+    out.writeString(this.orderid);
+
     out.writeString(this.timeofsale);
 
     out.writeString(this.merchant);
@@ -579,6 +653,8 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
+      this.orderid = in.readString(this.orderid instanceof Utf8 ? (Utf8)this.orderid : null);
+
       this.timeofsale = in.readString(this.timeofsale instanceof Utf8 ? (Utf8)this.timeofsale : null);
 
       this.merchant = in.readString(this.merchant instanceof Utf8 ? (Utf8)this.merchant : null);
@@ -590,25 +666,29 @@ public class pos extends org.apache.avro.specific.SpecificRecordBase implements 
       this.quantity = in.readString(this.quantity instanceof Utf8 ? (Utf8)this.quantity : null);
 
     } else {
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < 6; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.timeofsale = in.readString(this.timeofsale instanceof Utf8 ? (Utf8)this.timeofsale : null);
+          this.orderid = in.readString(this.orderid instanceof Utf8 ? (Utf8)this.orderid : null);
           break;
 
         case 1:
-          this.merchant = in.readString(this.merchant instanceof Utf8 ? (Utf8)this.merchant : null);
+          this.timeofsale = in.readString(this.timeofsale instanceof Utf8 ? (Utf8)this.timeofsale : null);
           break;
 
         case 2:
-          this.productid = in.readString(this.productid instanceof Utf8 ? (Utf8)this.productid : null);
+          this.merchant = in.readString(this.merchant instanceof Utf8 ? (Utf8)this.merchant : null);
           break;
 
         case 3:
-          this.sellingPrice = in.readString(this.sellingPrice instanceof Utf8 ? (Utf8)this.sellingPrice : null);
+          this.productid = in.readString(this.productid instanceof Utf8 ? (Utf8)this.productid : null);
           break;
 
         case 4:
+          this.sellingPrice = in.readString(this.sellingPrice instanceof Utf8 ? (Utf8)this.sellingPrice : null);
+          break;
+
+        case 5:
           this.quantity = in.readString(this.quantity instanceof Utf8 ? (Utf8)this.quantity : null);
           break;
 

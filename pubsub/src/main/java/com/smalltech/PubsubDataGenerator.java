@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-
+import java.util.UUID;
 public class PubsubDataGenerator {
 
 
@@ -16,7 +16,13 @@ public class PubsubDataGenerator {
         productid=get_random_element(productidList);
         sellingPrice=get_random_element(sellingPriceList);
         quantity=get_random_element(quantityList);
+        orderid=generate_uuid();
 
+    }
+
+    private String generate_uuid()
+    {
+        return UUID.randomUUID().toString().replace("-", "");
     }
     private String get_random_element(List<String> givenList)
     {
@@ -69,6 +75,7 @@ public class PubsubDataGenerator {
     String productid;
     String sellingPrice;
     String quantity;
+    String orderid;
     List<String> productidList = Arrays.asList("2e5da385-c96b-402e-bfc9-6366f84aacb8",
             "bc96e48c-07ff-4544-a488-72fc1ea49e58",
             "000a0f96-c913-4a0b-886b-6ce8f8837e48",

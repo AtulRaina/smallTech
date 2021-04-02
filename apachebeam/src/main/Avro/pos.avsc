@@ -3,6 +3,11 @@
    "name":"pos",
    "namespace":"com.smalltech.avro",
    "fields":[
+
+           {
+                  "name":"orderid",
+                  "type":"string"
+               },
       {
          "name":"timeofsale",
          "type":"string"
