@@ -13,12 +13,34 @@ Publisher: mvn sprint-boot:run
 
 
 
+
+
 Invoke-WebRequest http://localhost:8080//publish
 
 
-gcloud functions deploy smalltech1 --entry-point functions.HelloPubSub --runtime=java11 --trigger-topic pos-v1 --source=target/deployment/ --region=australia-southeast1
-
-gcloud functions deploy smalltech --entry-point functions.HelloPubSub --runtime=java11 --trigger-topic pos-v1 --source=target/deployment/
 
 
+
+
+
+
+#steps to activate the service account for a newly installed service account
 gcloud auth activate-service-account dell-laptop@lyrical-amulet-308012.iam.gserviceaccount.com  --key-file=c:/lock/lyrical-amulet-308012-c9b6b13821f0.json --project=lyrical-amulet-308012
+
+#Uber jar is important check out the setting that have been applied in the maven file.
+mvn package
+
+gcloud functions deploy smalltech1 --entry-point functions.HelloPubSub --runtime=java11 --trigger-topic pos-v1 --source=target/deployment/ --region=australia-southeast1
+googlekid@lyrical-amulet-308012.iam.gserviceaccount.com
+
+gcloud auth activate-service-account googlekid@lyrical-amulet-308012.iam.gserviceaccount.com  --key-file=c:/lock/lyrical-amulet-308012-db7af1854def.json --project=lyrical-amulet-308012
+
+
+#polling pipleline
+mvn compile exec:java -Dexec.mainClass=SmallTechBeamWatch -Dexec.args="--runner=DataflowRunner --gcpTempLocation=gs://smalltech/beam --project=lyrical-amulet-308012 --region=us-central1" -Pdataflow-runner
+
+
+
+
+
+java -jar target/deployment/smalltechBeamWatch-1.0-SNAPSHOT.jar --runner=DataflowRunner --gcpTempLocation=gs://smalltech/beam --project=lyrical-amulet-308012 --region=us-central1 --tempLocation=gs://smalltech/beam

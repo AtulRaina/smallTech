@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ea08d29-deb7-4177-a036-cdbf096669d4" name="Default Changelist" comment="" />
+    <list default="true" id="0ea08d29-deb7-4177-a036-cdbf096669d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployment/ApacheBeam_build_deploy.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/smalltechBeamWatch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/src/main/java/SmallTechBeamWatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch$Caster.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch$MeasureLength.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch$PubSubToGcsOptions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/deployment/smalltechBeamWatch-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/smalltechBeamWatch-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/apachebeam-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/BeamFirestore.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/BeamFirestore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/BeamPubsub$pubsub_to_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/BeamPubsub$pubsub_to_class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudFunction/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudFunction/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudFunction/target/deployment/hello-pub-sub-1.0.21.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/target/deployment/hello-pub-sub-1.0.21.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudFunction/target/hello-pub-sub-1.0.21.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/target/hello-pub-sub-1.0.21.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runPipeline.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runPipeline.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1qbvsgXh7aoc8obKLnAMwurwVgI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -30,5 +76,20 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.avsc" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
