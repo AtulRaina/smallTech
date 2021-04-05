@@ -15,9 +15,9 @@ import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.TypeDescriptors;
 import org.graalvm.compiler.lir.alloc.lsra.LinearScanResolveDataFlowPhase;
 import org.joda.time.Duration;
+import java.io.Serializable;
 
-
-public class SmallTechBeamWatch {
+public class SmallTechBeamWatch implements Serializable {
     public interface PubSubToGcsOptions extends PipelineOptions {
 
     }
@@ -66,23 +66,23 @@ public class SmallTechBeamWatch {
         PCollection<String> lines = p.apply(TextIO.read()
                 .from("gs://smalltech//function/*")
                 .watchForNewFiles(
-                        // Check for new files every 30 seconds
+                        // Check for new files every 60 seconds
                         Duration.standardSeconds(60),
                         // Never stop checking for new files
                         Watch.Growth.<String>never()));
-         lines.apply(ParDo.of(new MeasureLength()));
+         //lines.apply(ParDo.of(new MeasureLength()));
 
         PCollection<String> totalsales =
                 p.apply(
                         BigQueryIO.read(
-                                (SchemaAndRecord elem) -> (String) elem.getRecord().get("totalsales"))
+                                (SchemaAndRecord elem) ->  elem.getRecord().get("totalsales").toString())
                                 .fromQuery(
                                         "SELECT cast ( SUM(CAST(sellingPrice AS Numeric)) as String) AS totalsales FROM `lyrical-amulet-308012.Sample_Tech.pos`")
                                 .usingStandardSql().withCoder(StringUtf8Coder.of())
                 .withoutValidation());
 
 
-        totalsales.apply(TextIO.write().to("gs://smalltech//function//Sales.txt"));
+        totalsales.apply(TextIO.write().to("gs://smalltech//function//SalES").withSuffix(".csv"));
         p.run().waitUntilFinish();
     }
 }
