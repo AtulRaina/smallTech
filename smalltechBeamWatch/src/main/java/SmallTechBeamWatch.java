@@ -54,35 +54,34 @@ public class SmallTechBeamWatch implements Serializable {
     public static void main(String[] args) {
         PubSubToGcsOptions options=PipelineOptionsFactory.fromArgs(args).withValidation().as(PubSubToGcsOptions.class);
 
-        // GcpOptions gcpOptions = options.as(GcpOptions.class);
-       // gcpOptions.setProject("lyrical-amulet-308012");
-       // gcpOptions.setTempLocation("gs://smalltech//beam");
-        //options.setTempLocation("gs://smalltech//tmp");
-        //gcpOptions.setRunner(options.getRunner());
+
 
         Pipeline p = Pipeline.create(options);
 
 
         PCollection<String> lines = p.apply(TextIO.read()
-                .from("gs://smalltech//function/*")
+                .from("gs://smalltech//function/*.txt")
                 .watchForNewFiles(
                         // Check for new files every 60 seconds
-                        Duration.standardSeconds(60),
+                        Duration.standardSeconds(30),
                         // Never stop checking for new files
                         Watch.Growth.<String>never()));
-         //lines.apply(ParDo.of(new MeasureLength()));
-
-        PCollection<String> totalsales =
-                p.apply(
-                        BigQueryIO.read(
-                                (SchemaAndRecord elem) ->  elem.getRecord().get("totalsales").toString())
-                                .fromQuery(
-                                        "SELECT cast ( SUM(CAST(sellingPrice AS Numeric)) as String) AS totalsales FROM `lyrical-amulet-308012.Sample_Tech.pos`")
-                                .usingStandardSql().withCoder(StringUtf8Coder.of())
-                .withoutValidation());
 
 
-        totalsales.apply(TextIO.write().to("gs://smalltech//function//SalES").withSuffix(".csv"));
+        if (lines != null) {
+            PCollection<String> totalsales =
+                    p.apply(
+                            BigQueryIO.read(
+                                    (SchemaAndRecord elem) ->  elem.getRecord().get("totalsales").toString())
+                                    .fromQuery(
+                                            "SELECT cast ( SUM(CAST(sellingPrice AS Numeric)) as String) AS totalsales FROM `lyrical-amulet-308012.Sample_Tech.pos`")
+                                    .usingStandardSql().withCoder(StringUtf8Coder.of())
+                                    .withoutValidation());
+
+
+            totalsales.apply(TextIO.write().to("gs://smalltech//Sales/Results").withSuffix(".csv"));
+        }
+
         p.run().waitUntilFinish();
     }
 }

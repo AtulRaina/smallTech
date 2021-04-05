@@ -16,6 +16,7 @@ Publisher: mvn sprint-boot:run
 
 
 Invoke-WebRequest http://localhost:8080//publish
+while($i -le 10 ){Invoke-WebRequest http://localhost:8080//publish}  c
 
 
 
