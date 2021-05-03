@@ -68,11 +68,15 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
     logger.info("Metageneration: " + event.getMetageneration());
     logger.info("Created: " + event.getTimeCreated());
     logger.info("Updated: " + event.getUpdated());
-    read_execute_query();
+    if(event.getName().contains("processed")) {
+      //only execute the core logic when the folder pattern matches
+      read_execute_query();
+    }
   }
 
   public void read_execute_query() throws Exception
   {
+    // Execute all the queries read from the storage sequentially
     List<String> eventQueries=queries();
     for(String eventQuery:eventQueries)
     {
@@ -83,6 +87,7 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
 
   public void run_query(String querytoRun)  throws Exception
   {
+    //  run the queries that are read from the storage
     BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
     QueryJobConfiguration queryConfig =
             QueryJobConfiguration.newBuilder(
@@ -119,6 +124,9 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
 
   public static void publishWithErrorHandlerExample(String projectId, String topicId,String message)
           throws IOException, InterruptedException {
+    // publish message which is the result of the query
+    // TO DO make it class specific
+    // publish the result of the query to the pubsub topic
     TopicName topicName = TopicName.of(projectId, topicId);
     Publisher publisher = null;
 
@@ -172,6 +180,10 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
 
    public static List<String> queries()
    {
+     // parse the storage for all the files
+     // read each file content as string and add it to list of strings
+     // returns content of all the files as strings each row in list is the content of one file read.
+     //ToDo filter for specific file pattern
      List<String> queryList = new ArrayList<String>();
      Storage storage = StorageOptions.newBuilder().setProjectId("lyrical-amulet-308012").build().getService();
      Page<Blob> blobs = storage.list("cfquery");
@@ -190,4 +202,4 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
 
 
 
-// [END functions_helloworld_storage]
+

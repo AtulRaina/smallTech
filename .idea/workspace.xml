@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ea08d29-deb7-4177-a036-cdbf096669d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/New Text Document.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/src/main/java/functions/HelloGcs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/src/main/java/functions/eventpojos/GcsEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/src/main/queries/First.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/eventpojos/GcsEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfbucket/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcf-test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runPipeline.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runPipeline.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfbucket/src/main/java/functions/HelloGcs.java" beforeDir="false" afterPath="$PROJECT_DIR$/cfbucket/src/main/java/functions/HelloGcs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs.class" beforeDir="false" afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfbucket/target/deployment/functions-hello-gcs-1.0.22.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cfbucket/target/deployment/functions-hello-gcs-1.0.22.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfbucket/target/functions-hello-gcs-1.0.22.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cfbucket/target/functions-hello-gcs-1.0.22.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfbucket/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cfbucket/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +72,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cfbucket/src/main/java/functions/HelloGcs.java</url>
-          <line>120</line>
+          <line>125</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
