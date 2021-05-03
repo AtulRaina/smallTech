@@ -1,0 +1,1 @@
+SELECT  sum(cast(quantity as Int64)* cast(sellingPrice as Int64)) as Totalsales  FROM `lyrical-amulet-308012.Sample_Tech.pos` 

@@ -1,0 +1,4 @@
+Deploy Apache beam
+Deploy Function
+Deploy Service
+Invoke Tester

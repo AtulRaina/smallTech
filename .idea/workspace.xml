@@ -2,42 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ea08d29-deb7-4177-a036-cdbf096669d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deployment/ApacheBeam_build_deploy.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/smalltechBeamWatch.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/src/main/java/SmallTechBeamWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch$Caster.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch$MeasureLength.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch$PubSubToGcsOptions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/classes/SmallTechBeamWatch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/deployment/smalltechBeamWatch-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smalltechBeamWatch/target/smalltechBeamWatch-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/New Text Document.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/src/main/java/functions/HelloGcs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/src/main/java/functions/eventpojos/GcsEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/src/main/queries/First.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/HelloGcs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/target/classes/functions/eventpojos/GcsEvent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cfbucket/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcf-test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/apachebeam-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/BeamFirestore.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/BeamFirestore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/BeamPubsub$pubsub_to_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/BeamPubsub$pubsub_to_class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos.class" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/classes/com/smalltech/avro/pos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apachebeam/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudFunction/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudFunction/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudFunction/target/deployment/hello-pub-sub-1.0.21.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/target/deployment/hello-pub-sub-1.0.21.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudFunction/target/hello-pub-sub-1.0.21.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/target/hello-pub-sub-1.0.21.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/cloudFunction/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runPipeline.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runPipeline.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +37,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cfbucket" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\smallTech\cfbucket" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,5 +72,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cfbucket/src/main/java/functions/HelloGcs.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
