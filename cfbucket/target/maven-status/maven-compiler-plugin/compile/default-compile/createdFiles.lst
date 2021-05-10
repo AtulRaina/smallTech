@@ -1,3 +1,6 @@
-functions\HelloGcs.class
-functions\HelloGcs$1.class
+functions\PubSubHelper.class
 functions\eventpojos\GcsEvent.class
+functions\HelloGcs.class
+functions\EventScanner.class
+functions\HelloGcs$1.class
+functions\QueryExecution.class

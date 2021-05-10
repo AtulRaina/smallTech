@@ -68,10 +68,13 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
     logger.info("Metageneration: " + event.getMetageneration());
     logger.info("Created: " + event.getTimeCreated());
     logger.info("Updated: " + event.getUpdated());
-    if(event.getName().contains("processed")) {
-      //only execute the core logic when the folder pattern matches
-      read_execute_query();
-    }
+    // step to load the config and look for the event ---
+    // you will look up the event in the dictionary
+    EventScanner eventScanner= new EventScanner(event.getName());
+//    if(event.getName().contains("processed")) {
+//      //only execute the core logic when the folder pattern matches
+//      read_execute_query();
+//    }
   }
 
   public void read_execute_query() throws Exception
@@ -80,7 +83,7 @@ public class HelloGcs implements BackgroundFunction<GcsEvent> {
     List<String> eventQueries=queries();
     for(String eventQuery:eventQueries)
     {
-      logger.info("Executing Query: "+ eventQuery);
+     // logger.info("Executing Query: "+ eventQuery);
       run_query(eventQuery);
     }
   }
