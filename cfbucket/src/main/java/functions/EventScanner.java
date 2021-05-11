@@ -3,43 +3,40 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.Collection;
 import java.util.logging.Logger;
 
 public class EventScanner {
 
     private static final Logger logger = Logger.getLogger(EventScanner.class.getName());
-    private String receivedTriggerFile;
-    private List<String> queriesToExecute;
+    private final String receivedTriggerFile;
     PubSubHelper pubSubHelper=null;
-    Storage storage =null ;
-    Page<Blob> blobs =null   ;
+    Storage storage;
+    Page<Blob> blobs;
 
 
-    public EventScanner(String triggerfile) throws IOException, InterruptedException {
-        this.storage = StorageOptions.newBuilder().setProjectId("lyrical-amulet-308012").build().getService();
-        this.blobs = storage.list("triggercloudfunction");
-        this.receivedTriggerFile=triggerfile;
+
+    public EventScanner(String triggerFile) throws IOException, InterruptedException {
+        this.storage = StorageOptions.newBuilder().setProjectId(new PropertiesLoader().prop.getProperty("project")).build().getService();
+        this.blobs = storage.list(new PropertiesLoader().prop.getProperty("configStorageBucket"));
+        this.receivedTriggerFile=triggerFile;
         if(this.scanEvent())
         {
-        logger.info("-------------------------We Found a Expected Event");
+        logger.info("Expected event executed ");
         }
-
 
     }
 
 
     private boolean scanEvent() throws IOException, InterruptedException {
         logger.info("Scanning events....");
-        List<String> expectedTriggers = null;
+        List<String> expectedTriggers;
         List<String>receivedTriggerList= Arrays.asList(receivedTriggerFile.split("/"));
 
 
@@ -52,9 +49,7 @@ public class EventScanner {
 
             } else {
                // logger.info("Configuration does not contain , ");
-                expectedTriggers = Arrays.asList(config.split("\\|")[0]);
-
-
+                expectedTriggers = Collections.singletonList(config.split("\\|")[0]);
             }
            //logger.info("Received Trigger List: "+receivedTriggerList.toString());
            // logger.info("Expected Trigger List: "+ expectedTriggers.toString());
@@ -62,10 +57,10 @@ public class EventScanner {
             // if the event is found then only set the folder path
             if (receivedTriggerList.containsAll(expectedTriggers)) {
               //  logger.info("=========Trigger match===========");
-                String queryfolder = config.split("\\|")[1].toString();
+                String queryFolder = config.split("\\|")[1];
                // logger.info("Folder to pick queries is :"+ queryfolder);
 
-                 queriesToExecute=this.get_queries(queryfolder);
+                List<String> queriesToExecute = this.getQueries(queryFolder);
                 logger.info("Total Query files for execution: "+ queriesToExecute.size());
                 //logger.info("Trigger File found: "+ receivedTriggerFile);
              if(queriesToExecute.size()>0) {
@@ -100,8 +95,8 @@ public class EventScanner {
 
     }
 
-    private List<String>get_queries(String targetPattern) {
-        List<String> queryList = new ArrayList<String>();
+    private List<String> getQueries(String targetPattern) {
+        List<String> expectedEventQueryList = new ArrayList<>();
 
         for (Blob blob : this.blobs.iterateAll()) {
             //logger.info("Scanning blob............"+blob.getName());
@@ -109,35 +104,37 @@ public class EventScanner {
                // logger.info("Reading query as it match pattern : "+blob.getName());
                 String fileContent = new String(blob.getContent());
                 if (fileContent.length() > 0) {
-                    queryList.add(fileContent);
+                    expectedEventQueryList.add(fileContent);
                 }
             }
 
         }
-        return queryList;
+        return expectedEventQueryList;
     }
 
-    public List<String> loadConfig()
+    private List<String> loadConfig()
     {
         logger.info("Loding config......");
-        List<String> queryList = new ArrayList<String>();
+        List<String> expectedEventConfigList = new ArrayList<>();
 
         try {
 
-        for (Blob blob : blobs.iterateAll()) {
-           // logger.info(blob.getName());
-            if(blob.getName().contains("config/config.txt")) {
-                String fileContent = new String(blob.getContent());
-                queryList = Arrays.asList(fileContent.split("\n"));
-             //   logger.info("Total expected trigger found"+ queryList.size());
+            for (Blob blob : blobs.iterateAll()) {
+                // logger.info(blob.getName());
+                if(blob.getName().contains(new PropertiesLoader().prop.getProperty("configFilePath"))) {
+                    String fileContent = new String(blob.getContent());
+                    expectedEventConfigList = Arrays.asList(fileContent.split("\n"));
+                    //   logger.info("Total expected trigger found"+ queryList.size());
+                }
             }
-        }
         } catch (Exception e) {
             logger.info(e.toString());
         }
 
-        return queryList;
+        return expectedEventConfigList;
     }
+
+
 
 
 }

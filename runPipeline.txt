@@ -35,7 +35,7 @@ gcloud functions deploy smalltech1 --entry-point functions.HelloPubSub --runtime
 googlekid@lyrical-amulet-308012.iam.gserviceaccount.com
 
 #deploy the gcs function make sure the trigger is the bucket name you can change the trigger event.
-gcloud functions deploy java-gcs-function --entry-point functions.HelloGcs --runtime java11 --memory 512MB --source=target/deployment/ --region=australia-southeast1 --trigger-resource cftrigger --trigger-event google.storage.object.finalize
+gcloud functions deploy BatchEvents --entry-point functions.BatchEventProcessor --runtime java11 --memory 512MB --source=target/deployment/ --region=australia-southeast1 --trigger-resource cftrigger --trigger-event google.storage.object.finalize
 
 
 

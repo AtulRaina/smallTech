@@ -1,6 +1,5 @@
 package functions;
 
-import java.awt.event.PaintEvent;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;

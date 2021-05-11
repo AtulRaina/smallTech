@@ -8,13 +8,13 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import java.util.UUID;
-import java.util.logging.Logger;
+
 
 
 public class QueryExecution {
 
-    BigQuery  bigquery=null;
-    private static final Logger logger = Logger.getLogger(QueryExecution.class.getName());
+    BigQuery  bigquery;
+
     public QueryExecution()
     {
         bigquery = BigQueryOptions.getDefaultInstance().getService();

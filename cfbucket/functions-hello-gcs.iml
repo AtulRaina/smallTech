@@ -108,7 +108,5 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.glassfish:javax.json:1.0.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-compress:1.19" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-io:commons-io:2.5" level="project" />
-    <orderEntry type="library" name="Maven: com.github.spotbugs:spotbugs-annotations:4.2.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.google.cloud:google-cloud-core:tests:1.94.4" level="project" />
   </component>
 </module>
